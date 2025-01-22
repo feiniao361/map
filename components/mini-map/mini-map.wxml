@@ -1,0 +1,15 @@
+<view class="mini-map-container">
+  <map
+    id="miniMap"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="{{scale}}"
+    enable-poi="false"
+    enable-overlooking="false"
+    style="width: 100%; height: 100%;"
+    enable-3D="{{threed}}"
+    enable-scroll="{{scroll}}"
+    enable-zoom="{{zoom}}"
+    show-location="{{location}}"
+  ></map>
+</view>

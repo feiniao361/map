@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "地图页面",
+  "component": true,
+  "usingComponents": {
+    "joystick": "/components/joystick/joystick",
+    "mini-map": "/components/mini-map/mini-map",
+    "war-fog": "/components/war-fog/war-fog"
+  }
+}

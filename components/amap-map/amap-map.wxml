@@ -1,0 +1,10 @@
+<map
+  id="amap"
+  class="map-container"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  show-location
+  markers="{{markers}}"
+  bindmarkertap="onMarkerTap"
+/>

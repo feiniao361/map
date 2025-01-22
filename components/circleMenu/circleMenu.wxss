@@ -1,0 +1,123 @@
+.circle-menu {
+    position:absolute;
+    width:0;
+    height:0;
+    top:70%;
+    left:50%;
+
+}
+/* 遮罩层样式 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #ed6ea0, #ec8c69);
+  z-index: 7; /* 确保遮罩层在最顶层 */
+  opacity: 0; /* 初始透明 */
+  visibility: hidden; /* 初始不可见 */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* 动画过渡效果 */
+}
+
+/* 遮罩层可见状态 */
+.overlay-visible {
+  opacity: 1; /* 完全不透明 */
+  visibility: visible; /* 可见 */
+}
+
+.menu-btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: RGB(255,255,255,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-items {
+  position: absolute;
+  z-index:10;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* 禁止鼠标操作 */
+}
+
+.item {
+  position: absolute;
+  background-color: rgba(255,255,255,0.5);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(0deg) scale(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  display: flex; /* 使用 flex 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+}
+
+.icon{
+   
+}
+
+.item0{
+  opacity: 1;
+  transform: rotate(-20deg) scale(1);
+}
+.item1{
+  opacity: 1;
+  transform: rotate(40deg) scale(1);
+}
+.item2{
+  opacity: 1;
+  transform: rotate(100deg) scale(1);
+}
+.item3{
+  opacity: 1;
+  transform: rotate(160deg) scale(1);
+}
+.item4{
+  opacity: 1;
+  transform: rotate(220deg) scale(1);
+}
+.item5{
+  opacity: 1;
+  transform: rotate(280deg) scale(1);
+}
+.icon0{
+  opacity: 1;
+  transform: rotate(20deg) scale(1);
+}
+.icon1{
+  opacity: 1;
+  transform: rotate(-40deg) scale(1);
+}
+.icon2{
+  opacity: 1;
+  transform: rotate(-100deg) scale(1);
+}
+.icon3{
+  opacity: 1;
+  transform: rotate(-160deg) scale(1);
+}
+.icon4{
+  opacity: 1;
+  transform: rotate(-220deg) scale(1);
+}
+.icon5{
+  opacity: 1;
+  transform: rotate(-280deg) scale(1);
+}

@@ -1,0 +1,25 @@
+<view class="title">{{taskDetails.name}}</view>
+
+<view class="task-info">
+  <view class="label">等级</view>
+  <view class="value">{{taskDetails.level}}</view>
+
+  <view class="label">发布者</view>
+  <view class="value">{{taskDetails.publisher}}</view>
+
+  <view class="label">数量</view>
+  <view class="value">{{taskDetails.remaining}} / {{taskDetails.amount}}</view>
+
+  <view class="label">坐标</view>
+  <view class="value">{{taskDetails.latitude}}, {{taskDetails.longitude}}</view>
+</view>
+
+<view class="task-conditions">
+  <text>任务条件: {{taskDetails.conditions}}</text>
+</view>
+
+<view class="task-content">
+  <text>任务内容: {{taskDetails.content}}</text>
+</view>
+
+<button bindtap="onAcceptTask">接受任务</button>

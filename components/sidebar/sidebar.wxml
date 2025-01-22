@@ -1,0 +1,8 @@
+<view class="sidebar">
+  <block wx:for="{{menuItems}}" wx:key="id">
+    <view class="menu-item" bindtap="onMenuTap" data-id="{{item.id}}">
+      <image class="menu-icon" src="{{item.icon}}" mode="aspectFit" />
+      <text class="menu-text">{{item.text}}</text>
+    </view>
+  </block>
+</view>

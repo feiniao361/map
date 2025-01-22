@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "components/amap-map/amap-map",
+    "components/mini-war-fog/mini-war-fog",
+    "components/character/character",
+    "components/circleMenu/circleMenu",
+    "components/static-war-fog/static-war-fog",
+    "components/task-list/task-list",
+    "pages/task-detail/task-detail",
+    "components/sidebar",
+    "components/sidebar/sidebar",
+    "components/user/user"
+  ],
+  "window": {
+    "navigationBarTitleText": "小程序地图",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,32 @@
+<!-- pages/user-info/user-info.wxml -->
+
+<view class="container">
+  <!-- 用户头像和昵称部分 -->
+  <view class="userinfo">
+    <!-- 使用 chooseAvatar 功能 -->
+    <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
+      <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      </button>
+      <view class="nickname-wrapper">
+        <text class="nickname-label">昵称</text>
+        <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:input="onInputChange" />
+      </view>
+    </block>
+
+    <!-- 使用 getUserProfile -->
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="get-user-info-btn">获取头像昵称</button>
+      <view wx:else>请使用 2.10.4 及以上版本基础库</view>
+    </block>
+
+    <!-- 用户信息已获取 -->
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <!-- 确认按钮 -->
+  <button class="confirm-btn" wx:if="{{hasUserInfo}}" bindtap="onConfirm">确认</button>
+</view>

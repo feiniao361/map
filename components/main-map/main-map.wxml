@@ -1,0 +1,15 @@
+<map
+  id="mainMap"
+  class="main-map"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  rotate="{{rotate}}"
+  tilt="{{tilt}}"
+  skew="{{skew}}"
+  show-location
+  enable-3D="{{threed}}"
+  enable-scroll="{{scroll}}"
+  enable-zoom="{{zoom}}"
+  show-location="{{location}}"
+/>

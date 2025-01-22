@@ -1,0 +1,21 @@
+/* 迷雾 canvas 样式 */
+#miniFogCanvas{
+    position:absolute;
+    z-index:0;
+}
+.miniFogCanvas{
+    position:absolute;
+    z-index:0;
+}
+
+/* 小地图战争迷雾的容器样式 */
+.mini-war-fog-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 160px;
+  height: 160px;
+  border-radius: 0px;
+  z-index: 2;
+  pointer-events: none; /* 防止事件穿透 */
+}

@@ -1,0 +1,9 @@
+<!-- components/war-fog/war-fog.wxml -->
+<view class="war-fog-container">
+  <canvas
+    id="fogCanvas"
+    canvas-id="fogCanvas"
+    type="2d"
+    style="width: 100%; height: 100%;"
+  ></canvas>
+</view>

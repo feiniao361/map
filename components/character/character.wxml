@@ -1,0 +1,3 @@
+<view class="character" style="transform: rotate({{rotate}}deg); width: {{size}}px; height: {{size}}px;">
+  <image class="character-image" src="/images/character1.svg" mode="aspectFill" style="width: {{size}}px; height: {{size}}px;" />
+</view>

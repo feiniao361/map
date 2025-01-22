@@ -1,0 +1,60 @@
+<view class="container">
+
+<!-- 大地图 -->
+  <main-map
+    id="mainMap"
+    class="main-map"
+    latitude="{{latitude}}" 
+    longitude="{{longitude}}"
+    rotate="{{rotate}}" 
+    bind:mapready="onMapReady"
+    bind:regionchange="onRegionChange"
+    bind:maptap="onMapTap"  
+  />
+
+<!-- 小地图 -->
+  <mini-map
+    class="miniMap"
+    latitude="{{miniMapLatitude}}"
+    longitude="{{miniMapLongitude}}"
+  />
+
+<!-- 小地图战争迷雾 -->
+  <!--<mini-war-fog
+    class="mini-war-fog"
+    fogRadius="50"  
+  />-->
+
+<!-- 遥感控制 -->
+  <joystick
+    class="joystick"
+    bind:joystickmove="onJoystickMove"
+    bind:joystickstop="onJoystickStop"
+  />
+
+<!--侧边栏-->
+  <sidebar
+    class="sideBar"
+    bind:sidebartap="onSideBarTap"
+  />
+
+<!-- 菜单组件 -->
+ <circleMenu
+    class="circleMenu"
+  />
+
+<!--
+<task-list
+  class="taskList" 
+  currentLatitude="{{latitude}}" 
+  currentLongitude="{{longitude}}" 
+  maxDistance="{{maxTaskDistance}}" 
+  wx:if="{{taskBarVisible}}"
+/>
+-->
+<!--
+<view class="expand-icon" wx:else bindtap="onExpand">
+  <image src="/images/icons/down-circle.svg" class="icon-image" />
+</view>
+-->
+</view>

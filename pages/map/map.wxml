@@ -1,0 +1,32 @@
+<view class="container">
+  <map
+    id="gameMap"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="{{scale}}"
+    style="width: 100%; height: 100%;"
+  ></map>
+
+  <!-- 战争迷雾组件 -->
+  <war-fog
+    id="warFog"
+    fog-radius="{{fogRadius}}"
+    center-lat="{{latitude}}"
+    center-lng="{{longitude}}"
+  ></war-fog>
+
+  <!-- 交互层：全屏透明view，用于阻断用户对map的直接触摸事件 -->
+  <view
+    class="interaction-layer"
+    catchtouchstart="onBlock"
+    catchtouchmove="onBlock"
+    catchtouchend="onBlock"
+    catchtouchcancel="onBlock"
+  >
+    <!-- 摇杆组件：在此层中，用户手势不会传递到map -->
+    <joystick max-distance="30" bind:directionchange="onDirectionChange"></joystick>
+
+    <!-- 小地图组件 -->
+    <mini-map latitude="{{latitude}}" longitude="{{longitude}}" mini-scale="8"></mini-map>
+  </view>
+</view>

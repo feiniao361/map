@@ -1,0 +1,8 @@
+<view class="mini-war-fog-container">
+  <canvas
+    type="2d"
+    class="miniFogCanvas"
+    id="miniFogCanvas"
+    style="width:{{position.width}}px;height:{{position.height}}px;top:{{position.x}}px;left:{{position.y}}px;"
+  ></canvas>
+</view>

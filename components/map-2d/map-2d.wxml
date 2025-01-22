@@ -1,0 +1,15 @@
+<map
+  id="map"
+  class="map-container"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  show-location
+  enable-zoom
+  enable-rotate
+  enable-scroll
+  bindregionchange="onRegionChange"
+  bindtap="onMapTap"
+  bindready="onMapReady"
+  layer-style="4YBBZ-4BA6Z-IODXW-TNUGD-TZ6OE-PZB67"
+/>

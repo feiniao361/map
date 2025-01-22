@@ -1,0 +1,10 @@
+<view class="control-area"
+  catchtouchstart="onControlStart"
+  catchtouchmove="onControlMove"
+  catchtouchend="onControlEnd"
+  catchtouchcancel="onControlEnd"
+>
+  <view class="joystick-base">
+    <view class="joystick-handle" style="transform: translate({{joystickX}}px, {{joystickY}}px);"></view>
+  </view>
+</view>

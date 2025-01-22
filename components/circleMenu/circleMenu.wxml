@@ -1,0 +1,25 @@
+<view class="circle-menu">
+  <!-- 遮罩层 -->
+  <view 
+    class="overlay {{isOverlayVisible ? 'overlay-visible' : ''}}"
+    catchtap="noop"> <!-- 使用 catchtap 阻止事件冒泡 -->
+  </view>
+
+  <!-- 中心按钮 -->
+  <view class="menu-btn" bindtap="toggleMenu" style="width:{{menuSize}}px;height:{{menuSize}}px">
+    <image style="width:{{menuBtn}}px;height:{{menuBtn}}px" src="{{menubtnIcon}}" />
+  </view>
+
+  <!-- 菜单项 -->
+  <view class="menu-items">
+    <block wx:for="{{items}}" wx:key="index">
+      <view 
+        class="item {{isMenuOpen ? 'item' : ''}}{{index}}" 
+        style="transform-origin: 100px {{radius}}px;width:{{menuSize}}px;height:{{menuSize}}px;"
+        data-index="{{index}}"
+        bindtap="handleItemClick">
+        <image class="icon icon{{index}}" style="width:{{menuiconSize}}px;height:{{menuiconSize}}px;" src="{{item.icon}}"/>
+      </view>
+    </block>
+  </view>
+</view>

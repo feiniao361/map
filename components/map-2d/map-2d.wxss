@@ -1,0 +1,9 @@
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* 确保地图在合理的层级 */
+  background-color: #f0f0f0; /* 用于调试的背景色，可移除 */
+}

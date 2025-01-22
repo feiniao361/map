@@ -1,0 +1,9 @@
+.mini-map-container {
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  border: 2rpx solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 998; /* 确保在其他元素之上 */
+}
