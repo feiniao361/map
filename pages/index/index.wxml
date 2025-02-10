@@ -43,7 +43,14 @@
     class="circleMenu"
   />
 
-<!--
+<!-- 用户信息 -->
+<user
+  wx:if="{{isUserVisible}}"
+  class="user"
+  bind:usertap="onUserTap"
+/>
+
+<!-- 任务列表 -->
 <task-list
   class="taskList" 
   currentLatitude="{{latitude}}" 

@@ -14,7 +14,7 @@ Page({
     tilt: 30, // 地图倾斜角度
     skew: 30, // 地图偏移角度（0-30，需开启 enable-3D 才能生效）
     maxTaskDistance: 3, // 5公里范围
-    taskBarVisible: true, //任务栏默认显示
+    taskBarVisible: false, //任务栏默认显示
   },
   radius: {
     type: Number,
@@ -25,6 +25,13 @@ Page({
    */
   onLoad() {
     console.log("【页面加载完成】地图初始数据:", this.data);
+  },
+
+  // 用户信息组件点击事件
+  onUserTap() {
+    this.setData({
+      isUserVisible: true, // 显示侧边栏
+    });
   },
 
   /**

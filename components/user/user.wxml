@@ -1,2 +1,35 @@
-<!--components/user/user.wxml-->
-<text>components/user/user.wxml</text>
+<view class="usercontainer">
+  <!-- 顶部区域 -->
+  <view class="header">
+    <view class="avatar">W</view>
+    <text class="title">WantLine</text>
+  </view>
+
+  <!-- 底部导航区域 -->
+  <view class="grid">
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>首页</text>
+    </view>
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>活动商家</text>
+    </view>
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>我的积分</text>
+    </view>
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>待完成</text>
+    </view>
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>积分商城</text>
+    </view>
+    <view class="grid-item">
+      <image src="/images/icons/home.svg" class="icon"></image>
+      <text>收藏夹</text>
+    </view>
+  </view>
+</view>
