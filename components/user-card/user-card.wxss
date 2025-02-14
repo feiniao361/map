@@ -3,9 +3,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     background: rgba(255, 255, 255, 0.3); /* 半透明白色背景 */
-  backdrop-filter: blur(10px); /* 模糊效果 */
+    backdrop-filter: blur(10px); /* 模糊效果 */
     z-index:10;
   }
   

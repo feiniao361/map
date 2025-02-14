@@ -1,0 +1,75 @@
+/* components/task-detail/task-detail.wxss */
+.task-container {
+  padding: 20rpx;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.task-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.task-level {
+  font-size: 28rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 8rpx;
+}
+
+.level-1 { background-color: #e6f7ff; color: #1890ff; }
+.level-2 { background-color: #fff7e6; color: #fa8c16; }
+.level-3 { background-color: #fff0f6; color: #eb2f96; }
+
+.task-info {
+  background-color: #f5f5f5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.info-item {
+  display: flex;
+  margin: 15rpx 0;
+  font-size: 32rpx;
+}
+
+.info-label {
+  color: #666;
+  width: 160rpx;
+}
+
+.task-content {
+  padding: 20rpx;
+}
+
+.content-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.action-buttons {
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.accept-btn, .nav-btn {
+  flex: 1;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+}
+
+.nav-btn[disabled] {
+  opacity: 0.6;
+  background-color: #ddd !important;
+  color: #666;
+}

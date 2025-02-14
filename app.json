@@ -2,16 +2,11 @@
   "pages": [
     "pages/login/login",
     "pages/index/index",
-    "components/amap-map/amap-map",
-    "components/mini-war-fog/mini-war-fog",
-    "components/character/character",
-    "components/circleMenu/circleMenu",
-    "components/static-war-fog/static-war-fog",
-    "components/task-list/task-list",
     "pages/task-detail/task-detail",
-    "components/sidebar",
+    "components/character/character",
+    "components/task-list/task-list",
     "components/sidebar/sidebar",
-    "components/user/user"
+    "components/user-card/user-card"
   ],
   "window": {
     "navigationBarTitleText": "小程序地图",

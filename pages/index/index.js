@@ -15,6 +15,7 @@ Page({
     skew: 30, // 地图偏移角度（0-30，需开启 enable-3D 才能生效）
     maxTaskDistance: 3, // 5公里范围
     taskBarVisible: false, //任务栏默认显示
+    isUserVisible:true,    //我的默认关闭
   },
   radius: {
     type: Number,
@@ -30,7 +31,7 @@ Page({
   // 用户信息组件点击事件
   onUserTap() {
     this.setData({
-      isUserVisible: true, // 显示侧边栏
+      isUserVisible: false, // 显示侧边栏
     });
   },
 

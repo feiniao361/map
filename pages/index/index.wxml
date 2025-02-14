@@ -12,19 +12,6 @@
     bind:maptap="onMapTap"  
   />
 
-<!-- 小地图 -->
-  <mini-map
-    class="miniMap"
-    latitude="{{miniMapLatitude}}"
-    longitude="{{miniMapLongitude}}"
-  />
-
-<!-- 小地图战争迷雾 -->
-  <!--<mini-war-fog
-    class="mini-war-fog"
-    fogRadius="50"  
-  />-->
-
 <!-- 遥感控制 -->
   <joystick
     class="joystick"
@@ -38,30 +25,10 @@
     bind:sidebartap="onSideBarTap"
   />
 
-<!-- 菜单组件 -->
- <circleMenu
-    class="circleMenu"
-  />
-
 <!-- 用户信息 -->
-<user
-  wx:if="{{isUserVisible}}"
-  class="user"
-  bind:usertap="onUserTap"
-/>
-
-<!-- 任务列表 -->
-<task-list
-  class="taskList" 
-  currentLatitude="{{latitude}}" 
-  currentLongitude="{{longitude}}" 
-  maxDistance="{{maxTaskDistance}}" 
-  wx:if="{{taskBarVisible}}"
-/>
--->
-<!--
-<view class="expand-icon" wx:else bindtap="onExpand">
-  <image src="/images/icons/down-circle.svg" class="icon-image" />
-</view>
--->
+  <user-card
+    wx:if="{{isUserVisible}}"
+    class="user-card"
+    bind:usertap="onUserTap"
+  />
 </view>
