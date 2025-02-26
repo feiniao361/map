@@ -1,19 +1,9 @@
 <view class="container">
-  <!-- 显示头像 -->
-  <view class="avatar-wrapper">
-    <image class="avatar" src="{{userInfo.avatarUrl || defaultAvatar}}" mode="cover" />
-  </view>
+  <!-- 用户名输入框 -->
+  <input class="input-field" placeholder="请输入用户名" bindinput="onUsernameInput" />
 
-  <!-- 昵称 -->
-  <view class="nickname-wrapper">
-    <text class="nickname-label">昵称：</text>
-    <text class="nickname-text">{{userInfo.nickName || "未授权"}}</text>
-  </view>
-
-  <!-- 获取用户信息按钮 -->
-  <button class="get-user-info-btn" open-type="getUserProfile" bindtap="getUserProfile">
-    获取微信头像和昵称
-  </button>
+  <!-- 密码输入框 -->
+  <input class="input-field" type="password" placeholder="请输入密码" bindinput="onPasswordInput" />
 
   <!-- 确认按钮 -->
   <button class="confirm-btn" bindtap="onConfirm">确认</button>

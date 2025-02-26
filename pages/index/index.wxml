@@ -23,6 +23,8 @@
   <sidebar
     class="sideBar"
     bind:sidebartap="onSideBarTap"
+    bind:showTaskList="onShowTaskList"
+    bind:showUserCard="onShowUserCard"
   />
 
 <!-- 用户信息 -->
@@ -30,5 +32,17 @@
     wx:if="{{isUserVisible}}"
     class="user-card"
     bind:usertap="onUserTap"
+    bind:closeUserCard="onCloseUserCard"
+  />
+
+  <!-- 灰色遮罩 -->
+  <view wx:if="{{taskBarVisible}}" class="overlay" bindtap="onHideTaskList"></view>
+
+  <!-- 任务列表 -->
+  <task-list 
+    wx:if="{{taskBarVisible}}" 
+    class="task-list show" 
+    taskTitle="{{taskTitle}}" 
+    tasks="{{tasks}}" 
   />
 </view>

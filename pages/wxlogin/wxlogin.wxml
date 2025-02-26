@@ -1,0 +1,7 @@
+<!--pages/wxlogin/wxlogin.wxml-->
+<view>
+  <button open-type="getUserProfile" bindtap="getUserProfile">获取用户信息</button>
+  <text>用户昵称: {{userInfo.nickName}}</text>
+  <image src="{{userInfo.avatarUrl}}" mode="widthFix" style="width:100px;height:100px;"></image>
+  <text>用户位置: {{location.latitude}}, {{location.longitude}}</text>
+</view>

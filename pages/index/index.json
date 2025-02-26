@@ -5,6 +5,7 @@
     "joystick": "/components/joystick/joystick",
     "task-detail": "/components/task-detail/task-detail",
     "user-card": "/components/user-card/user-card",
-    "sidebar": "/components/sidebar/sidebar"
+    "sidebar": "/components/sidebar/sidebar",
+    "task-list": "/components/task-list/task-list"
   }
 }

@@ -1,48 +1,68 @@
 Page({
   data: {
-    userInfo: {
-      avatarUrl: '', // 用户头像
-      nickName: '',  // 用户昵称
-    },
-    defaultAvatar: '/images/default-avatar.svg', // 默认头像
+    username: '', // 用户名
+    password: '', // 密码
   },
 
-  // 获取微信头像和昵称
-  getUserProfile() {
-    wx.getUserProfile({
-      desc: '用于展示个人资料', // 授权说明
-      success: (res) => {
-        console.log('获取成功:', res.userInfo);
-        this.setData({
-          userInfo: res.userInfo,
-        });
-      },
-      fail: (err) => {
-        console.error('获取失败:', err);
-        wx.showToast({
-          title: '授权失败，请重试',
-          icon: 'none',
-        });
-      },
+  // 处理用户名输入
+  onUsernameInput(e) {
+    this.setData({
+      username: e.detail.value
+    });
+  },
+
+  // 处理密码输入
+  onPasswordInput(e) {
+    this.setData({
+      password: e.detail.value
+    });
+  },
+
+  // 处理错误
+  handleError(message) {
+    wx.showToast({
+      title: message,
+      icon: 'none',
     });
   },
 
   // 确认按钮
   onConfirm() {
-    if (!this.data.userInfo.nickName || !this.data.userInfo.avatarUrl) {
-      wx.showToast({
-        title: '请先获取用户信息',
-        icon: 'none',
-      });
+    if (!this.data.username || !this.data.password) {
+      this.handleError('请输入用户名和密码');
       return;
     }
 
-    // 保存用户信息到全局数据或本地存储
-    wx.setStorageSync('userInfo', this.data.userInfo);
+    // 显示加载动画
+    wx.showLoading({
+      title: '正在登录...',
+    });
 
-    // 跳转到首页
-    wx.redirectTo({
-      url: '/pages/index/index',
+    // 发送请求到登录接口
+    wx.request({
+      url: 'http://47.116.205.160:9090/user/login',
+      method: 'POST',
+      data: {
+        username: this.data.username,
+        password: this.data.password,
+      },
+      success: (res) => {
+        console.log('登录成功:', res);
+        const { access_token, refresh_token } = res.data.data;
+        wx.setStorageSync('accessToken', access_token); // 保存 access_token
+        wx.setStorageSync('refreshToken', refresh_token); // 保存 refresh_token
+        wx.redirectTo({
+          url: '/pages/index/index',
+          complete: () => {
+            wx.hideLoading(); // 隐藏加载动画
+          },
+        });
+      },
+      fail: (err) => {
+        console.error('登录失败:', err);
+        this.handleError('登录失败，请重试');
+        wx.hideLoading();
+      }
     });
   },
 });
