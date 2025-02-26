@@ -14,8 +14,10 @@ Page({
     tilt: 30, // 地图倾斜角度
     skew: 30, // 地图偏移角度（0-30，需开启 enable-3D 才能生效）
     maxTaskDistance: 3, // 5公里范围
-    taskBarVisible: false, //任务栏默认显示
-    isUserVisible:true,    //我的默认关闭
+    taskBarVisible: false, // 控制任务列表的显示
+    isUserVisible: false, // 控制用户信息的显示
+    tasks: [],
+    taskTitle: '',
   },
   radius: {
     type: Number,
@@ -105,5 +107,53 @@ Page({
 
     //console.log("【地图更新完成】主地图中心点:", { latitude: this.data.latitude, longitude: this.data.longitude });
     //console.log("【地图更新完成】小地图中心点:", { latitude: this.data.miniMapLatitude, longitude: this.data.miniMapLongitude });
+  },
+
+  // 侧边栏点击事件
+  onShowTaskList(e) {
+    const { type } = e.detail;
+    if (type === 'unaccepted') {
+      this.setData({ taskTitle: '未接任务' });
+      this.loadUnacceptedTasks();
+    } else if (type === 'accepted') {
+      this.setData({ taskTitle: '已接任务' });
+      this.loadAcceptedTasks();
+    }
+    this.setData({ taskBarVisible: true });
+  },
+
+  // 隐藏任务列表
+  onHideTaskList() {
+    this.setData({ taskBarVisible: false });
+  },
+
+  onShowUserCard() {
+    this.setData({ isUserVisible: true });
+  },
+
+  onCloseUserCard() {
+    this.setData({ isUserVisible: false });
+  },
+
+  loadUnacceptedTasks() {
+    // 调用未接任务的数据接口
+    // 模拟数据
+    this.setData({
+      tasks: [
+        { id: 1, name: '任务 1', progress: '60/70', level: 'SSR', distance: '0.27公里' },
+        // 更多未接任务...
+      ]
+    });
+  },
+
+  loadAcceptedTasks() {
+    // 调用已接任务的数据接口
+    // 模拟数据
+    this.setData({
+      tasks: [
+        { id: 1, name: '任务 A', progress: '30/50', level: 'SR', distance: '0.5公里' },
+        // 更多已接任务...
+      ]
+    });
   },
 });

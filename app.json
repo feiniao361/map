@@ -6,7 +6,8 @@
     "components/character/character",
     "components/task-list/task-list",
     "components/sidebar/sidebar",
-    "components/user-card/user-card"
+    "components/user-card/user-card",
+    "pages/wxlogin/wxlogin"
   ],
   "window": {
     "navigationBarTitleText": "小程序地图",

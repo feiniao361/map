@@ -1,6 +1,6 @@
 /* components/sidebar/sidebar.wxss */.sidebar {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 10px;
   display: flex;
   flex-direction: column;
