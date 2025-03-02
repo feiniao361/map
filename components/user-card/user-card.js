@@ -21,6 +21,13 @@ Component({
   methods: {
     onClose() {
       this.triggerEvent('closeUserCard');
+    },
+
+    // 跳转到抽奖页面
+    navigateToLottery() {
+      wx.navigateTo({
+        url: '/pages/lottery/lottery'
+      });
     }
   }
 })

@@ -1,13 +1,15 @@
 {
   "pages": [
-    "pages/login/login",
+    
     "pages/index/index",
+    "pages/login/login",
+    "pages/wxlogin/wxlogin",
     "pages/task-detail/task-detail",
     "components/character/character",
     "components/task-list/task-list",
     "components/sidebar/sidebar",
     "components/user-card/user-card",
-    "pages/wxlogin/wxlogin"
+    "pages/lottery/lottery"
   ],
   "window": {
     "navigationBarTitleText": "小程序地图",

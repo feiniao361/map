@@ -1,0 +1,14 @@
+<view class="container">
+    <text class="title">积分抽奖</text>
+    <text class="points">当前积分: {{points}}</text>
+    <view id="container">
+        <ul id="list" class="lottery-list">
+            <li wx:for="{{prizes}}" wx:key="index" class="{{item.active ? 'active' : ''}}">
+                <image src="{{item.image}}" />
+                <view class="mask"></view>
+            </li>
+        </ul>
+        <button id="startbutton" bindtap="startLottery" style="background-color:#ff3a59;color:white;font-size: 20px;">开始抽奖</button>
+        <view id="message" class="{{messageClass}}">{{message}}</view>
+    </view>
+</view> 

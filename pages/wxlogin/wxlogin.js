@@ -29,9 +29,32 @@ Page({
         this.setData({
           userInfo: res.userInfo
         });
+        // 在成功获取用户信息后调用登录接口
+        this.loginUser(res.userInfo);
       },
       fail: (err) => {
         console.error("获取用户信息失败", err);
+      }
+    });
+  },
+
+  /**
+   * 用户登录
+   */
+  loginUser(userInfo) {
+    wx.request({
+      url: 'http://localhost:3000/user/login',
+      method: 'POST',
+      data: {
+        nickName: userInfo.nickName,
+        avatarUrl: userInfo.avatarUrl
+      },
+      success: (res) => {
+        console.log("登录成功", res);
+        // 可以在这里处理登录成功后的逻辑
+      },
+      fail: (err) => {
+        console.error("登录失败", err);
       }
     });
   },

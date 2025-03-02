@@ -11,9 +11,9 @@
       <image src="/images/icons/home.svg" class="icon"></image>
       <text>首页</text>
     </view>
-    <view class="grid-item">
+    <view class="grid-item" bindtap="navigateToLottery">
       <image src="/images/icons/home.svg" class="icon"></image>
-      <text>活动商家</text>
+      <text>积分抽奖</text>
     </view>
     <view class="grid-item">
       <image src="/images/icons/home.svg" class="icon"></image>
