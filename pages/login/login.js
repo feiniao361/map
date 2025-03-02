@@ -40,7 +40,7 @@ Page({
 
     // 发送请求到登录接口
     wx.request({
-      url: 'https://localhost:3000/user/login',
+      url: 'http://47.116.205.160:9090/user/login',
       method: 'POST',
       data: {
         username: this.data.username,
