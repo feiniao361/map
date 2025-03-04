@@ -7,7 +7,7 @@
 
   <!-- 底部导航区域 -->
   <view class="grid">
-    <view class="grid-item">
+    <view class="grid-item" bindtap="onClose">
       <image src="/images/icons/home.svg" class="icon"></image>
       <text>首页</text>
     </view>
@@ -15,7 +15,7 @@
       <image src="/images/icons/home.svg" class="icon"></image>
       <text>积分抽奖</text>
     </view>
-    <view class="grid-item">
+    <view class="grid-item" bindtap="navigateToPointsDetail">
       <image src="/images/icons/home.svg" class="icon"></image>
       <text>我的积分</text>
     </view>
@@ -32,5 +32,4 @@
       <text>收藏夹</text>
     </view>
   </view>
-  <image class="close-icon" src="/images/icons/close.svg" bindtap="onClose" />
 </view>

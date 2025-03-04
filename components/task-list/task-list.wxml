@@ -3,14 +3,18 @@
   <view class="task-header">
     <text class="task-title">{{taskTitle}}</text>
   </view>
-  <view class="task-item" wx:for="{{tasks}}" wx:key="id">
-    <view class="task-info">
-      <text class="task-name">{{item.name}}</text>
-      <text class="task-progress">{{item.progress}}</text>
-    </view>
-    <view class="task-details">
-      <text class="task-level">等级：{{item.level}}</text>
-      <text class="task-distance">距离：{{item.distance}}</text>
+  <view class="task-items">
+    <view class="task-item" 
+          wx:for="{{tasks}}" 
+          wx:key="id" 
+          bindtap="onTaskTap" 
+          data-task-id="{{item.id}}">
+      <view class="task-name">{{item.name}}</view>
+      <view class="task-info">
+        <text class="task-progress">{{item.progress}}</text>
+        <text class="task-level">{{item.level}}</text> 
+        <text class="task-distance">{{item.distance}}</text>
+      </view>
     </view>
   </view>
 </view>

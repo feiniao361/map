@@ -11,27 +11,104 @@ Component({
     },
     tasks: {
       type: Array,
-      value: [
-        { id: 1, name: '任务 1', progress: '60/70', level: 'SSR', distance: '0.27公里' },
-        { id: 2, name: '任务 2', progress: '60/70', level: 'SSR', distance: '0.27公里' },
-        // 更多任务...
-      ]
+      value: []
     }
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
     onClose() {
       this.triggerEvent('closeTaskList');
+    },
+
+    // 添加任务点击事件处理
+    onTaskTap(e) {
+      const taskId = e.currentTarget.dataset.taskId;
+      const task = this.data.tasks.find(t => t.id === taskId);
+      wx.navigateTo({
+        url: `/pages/task-detail/task-detail?id=${task.id}&taskName=${task.name}&level=${task.level}&rewardPoints=${task.rewardPoints}&latitude=${task.latitude}&longitude=${task.longitude}&taskId=${task.taskId}`
+      });
+    },
+
+    // 保留原有的加载任务方法
+    loadUnacceptedTasks() {
+      const token = wx.getStorageSync('accessToken');
+      const username = wx.getStorageSync('username');
+      wx.request({
+        url: 'http://47.116.205.160:9081/point/missPmList',
+        method: 'POST',
+        header: {
+          'authorization': `Bearer ${token}`
+        },
+        data: {
+          username: username
+        },
+        success: (res) => {
+          if (res.statusCode === 200 && res.data && res.data.pointTasks) {
+            const tasks = res.data.pointTasks.map(task => ({
+              id: task.id,
+              name: task.taskName,
+              taskId: task.taskId,
+              progress: task.isCompleted ? '发布者：数字部落' : '发布者：数字部落',
+              level: task.taskType?.toUpperCase() || 'N/A',
+              distance: '1KM',
+              rewardPoints: task.rewardPoints,
+              latitude: task.latitude,
+              longitude: task.longitude
+            }));
+            this.setData({ tasks });
+            this.triggerEvent('tasksLoaded', { tasks });
+          }
+        },
+        fail: (error) => {
+          console.error('获取未接任务失败:', error);
+          wx.showToast({
+            title: '获取任务列表失败',
+            icon: 'none'
+          });
+        }
+      });
+    },
+
+    loadAcceptedTasks() {
+      const token = wx.getStorageSync('accessToken');
+      const username = wx.getStorageSync('username');
+      wx.request({
+        url: 'http://47.116.205.160:9081/point/acceptedPmList',
+        method: 'POST',
+        header: {
+          'authorization': `Bearer ${token}`
+        },
+        data: {
+          username: username
+        },
+        success: (res) => {
+          if (res.statusCode === 200 && res.data && res.data.pointTasks) {
+            const tasks = res.data.pointTasks.map(task => ({
+              id: task.id,
+              name: task.taskName,
+              taskId: task.taskId,
+              progress: task.isCompleted ? '发布者：数字部落' : '发布者：数字部落',
+              level: task.taskType?.toUpperCase() || 'N/A',
+              distance: '1KM',
+              rewardPoints: task.rewardPoints,
+              latitude: task.latitude,
+              longitude: task.longitude
+            }));
+            this.setData({ tasks });
+            this.triggerEvent('tasksLoaded', { tasks });
+          }
+        },
+        fail: (error) => {
+          console.error('获取已接任务失败:', error);
+          wx.showToast({
+            title: '获取任务列表失败',
+            icon: 'none'
+          });
+        }
+      });
     }
   }
 })

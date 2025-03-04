@@ -113,13 +113,18 @@ Page({
   onShowTaskList(e) {
     const { type } = e.detail;
     if (type === 'unaccepted') {
-      this.setData({ taskTitle: '未接任务' });
-      this.loadUnacceptedTasks();
+      this.setData({ 
+        taskTitle: '未接任务',
+        taskBarVisible: true 
+      });
+      this.selectComponent('#taskList').loadUnacceptedTasks();
     } else if (type === 'accepted') {
-      this.setData({ taskTitle: '已接任务' });
-      this.loadAcceptedTasks();
+      this.setData({ 
+        taskTitle: '已接任务',
+        taskBarVisible: true 
+      });
+      this.selectComponent('#taskList').loadAcceptedTasks();
     }
-    this.setData({ taskBarVisible: true });
   },
 
   // 隐藏任务列表
@@ -133,27 +138,5 @@ Page({
 
   onCloseUserCard() {
     this.setData({ isUserVisible: false });
-  },
-
-  loadUnacceptedTasks() {
-    // 调用未接任务的数据接口
-    // 模拟数据
-    this.setData({
-      tasks: [
-        { id: 1, name: '任务 1', progress: '60/70', level: 'SSR', distance: '0.27公里' },
-        // 更多未接任务...
-      ]
-    });
-  },
-
-  loadAcceptedTasks() {
-    // 调用已接任务的数据接口
-    // 模拟数据
-    this.setData({
-      tasks: [
-        { id: 1, name: '任务 A', progress: '30/50', level: 'SR', distance: '0.5公里' },
-        // 更多已接任务...
-      ]
-    });
-  },
+  }
 });

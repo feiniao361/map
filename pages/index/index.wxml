@@ -40,9 +40,11 @@
 
   <!-- 任务列表 -->
   <task-list 
+    id="taskList"
     wx:if="{{taskBarVisible}}" 
-    class="task-list show" 
     taskTitle="{{taskTitle}}" 
     tasks="{{tasks}}" 
+    bind:closeTaskList="onHideTaskList"
+    bind:tasksLoaded="onTasksLoaded"
   />
 </view>

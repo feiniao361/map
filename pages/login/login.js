@@ -51,6 +51,7 @@ Page({
         const { access_token, refresh_token } = res.data.data;
         wx.setStorageSync('accessToken', access_token); // 保存 access_token
         wx.setStorageSync('refreshToken', refresh_token); // 保存 refresh_token
+        wx.setStorageSync('username', this.data.username); // 保存用户名
         wx.redirectTo({
           url: '/pages/index/index',
           complete: () => {

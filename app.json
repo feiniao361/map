@@ -2,8 +2,8 @@
   "pages": [
     "pages/login/login",
     "pages/index/index",
-    
     "pages/wxlogin/wxlogin",
+    "pages/points-detail/points-detail",
     "pages/task-detail/task-detail",
     "components/character/character",
     "components/task-list/task-list",

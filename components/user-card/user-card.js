@@ -28,6 +28,12 @@ Component({
       wx.navigateTo({
         url: '/pages/lottery/lottery'
       });
+    },
+
+    navigateToPointsDetail() {
+      wx.navigateTo({
+        url: '/pages/points-detail/points-detail'
+      });
     }
   }
 })

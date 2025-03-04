@@ -41,7 +41,7 @@
 }
 
 .task-name {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   color: #007bff;
 }
