@@ -1,26 +1,56 @@
-<view class="title">{{taskDetails.name}}</view>
+<view class="page-container">
+  <view class="title-section">
+    <view class="title">{{taskDetails.name}}</view>
+    <view class="task-badge {{taskDetails.level.toLowerCase()}}">{{taskDetails.level}}</view>
+  </view>
 
-<view class="task-info">
-  <view class="label">等级</view>
-  <view class="value">{{taskDetails.level}}</view>
+  <view class="task-info">
+    <view class="info-item">
+      <view class="label">
+        
+        <text>发布者</text>
+      </view>
+      <view class="value">{{taskDetails.publisher}}</view>
+    </view>
 
-  <view class="label">发布者</view>
-  <view class="value">{{taskDetails.publisher}}</view>
+    <view class="info-item">
+      <view class="label">
+        
+        <text>奖励积分</text>
+      </view>
+      <view class="value points">{{taskDetails.rewardPoints}} 分</view>
+    </view>
 
-  <view class="label">奖励积分</view>
-  <view class="value">{{taskDetails.rewardPoints}}</view>
+    <view class="info-item">
+      <view class="label">地址</view>
+      <view class="value address-row">
+        <text>{{taskDetails.address}}</text>
+        <!--<button class="nav-btn" bindtap="onNavigateTap">导航</button>-->
+      </view>
+    </view>
+  </view>
 
-  <view class="label">坐标</view>
-  /*<view class="value">{{taskDetails.latitude}}, {{taskDetails.longitude}}</view>*/
-  <view class="value">{{taskDetails.latitude}}, {{taskDetails.longitude}}</view>
+  <view class="section">
+    <view class="section-title">
+      <text>任务条件</text>
+    </view>
+    <view class="section-content">{{taskDetails.conditions}}</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">
+      <text>任务内容</text>
+    </view>
+    <view class="section-content">{{taskDetails.content}}</view>
+  </view>
+
+  <view class="button-container">
+    <block wx:if="{{!taskDetails.isAccepted}}">
+      <button class="primary-btn" bindtap="onAcceptTask">接受任务</button>
+    </block>
+    <block wx:else>
+      <button class="complete-btn" bindtap="onCompleteTask">完成任务</button>
+      <button class="abandon-btn" bindtap="onAbandonTask">放弃任务</button>
+    </block>
+  </view>
 </view>
-
-<view class="task-conditions">
-  <text>任务条件: {{taskDetails.conditions}}</text>
-</view>
-
-<view class="task-content">
-  <text>任务内容: {{taskDetails.content}}</text>
-</view>
-
-<button bindtap="onAcceptTask">接受任务</button>

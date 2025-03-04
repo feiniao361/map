@@ -1,46 +1,18 @@
 Page({
   data: {
-    username: '', // 用户名
-    password: '', // 密码
+    username: '123',
+    password: '123',
   },
 
-  // 处理用户名输入
-  onUsernameInput(e) {
-    this.setData({
-      username: e.detail.value
-    });
+  onReady() {
+    // 页面加载完毕后自动登录
+    this.autoLogin();
   },
 
-  // 处理密码输入
-  onPasswordInput(e) {
-    this.setData({
-      password: e.detail.value
-    });
-  },
-
-  // 处理错误
-  handleError(message) {
-    wx.showToast({
-      title: message,
-      icon: 'none',
-    });
-  },
-
-  // 确认按钮
-  onConfirm() {
-    if (!this.data.username || !this.data.password) {
-      this.handleError('请输入用户名和密码');
-      return;
-    }
-
-    // 显示加载动画
-    wx.showLoading({
-      title: '正在登录...',
-    });
-
-    // 发送请求到登录接口
+  autoLogin() {
+    const API = require('../../config/api.js');
     wx.request({
-      url: 'http://47.116.205.160:9090/user/login',
+      url: API.USER.LOGIN,
       method: 'POST',
       data: {
         username: this.data.username,
@@ -49,14 +21,43 @@ Page({
       success: (res) => {
         console.log('登录成功:', res);
         const { access_token, refresh_token } = res.data.data;
-        wx.setStorageSync('accessToken', access_token); // 保存 access_token
-        wx.setStorageSync('refreshToken', refresh_token); // 保存 refresh_token
-        wx.setStorageSync('username', this.data.username); // 保存用户名
-        wx.redirectTo({
-          url: '/pages/index/index',
-          complete: () => {
-            wx.hideLoading(); // 隐藏加载动画
+        wx.setStorageSync('accessToken', access_token);
+        wx.setStorageSync('refreshToken', refresh_token);
+        wx.setStorageSync('username', this.data.username);
+        
+        // 登录成功后发送消息
+        wx.request({
+          url: API.MESSAGE.SEND,
+          method: 'POST',
+          header: {
+            'authorization': `Bearer ${access_token}`
           },
+          data: {
+            key: "playTemp",
+            force: 1,
+            taskId: "20250209001",
+            videoList: ["a.mp4"]
+          },
+          success: (msgRes) => {
+            console.log('login消息发送成功:', msgRes);
+            // 消息发送成功后跳转到首页
+            wx.redirectTo({
+              url: '/pages/index/index',
+              complete: () => {
+                wx.hideLoading();
+              },
+            });
+          },
+          fail: (error) => {
+            console.error('login消息发送失败:', error);
+            // 即使消息发送失败也跳转到首页
+            wx.redirectTo({
+              url: '/pages/index/index',
+              complete: () => {
+                wx.hideLoading();
+              },
+            });
+          }
         });
       },
       fail: (err) => {
@@ -64,6 +65,13 @@ Page({
         this.handleError('登录失败，请重试');
         wx.hideLoading();
       }
+    });
+  },
+
+  handleError(message) {
+    wx.showToast({
+      title: message,
+      icon: 'none',
     });
   },
 });

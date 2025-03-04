@@ -14,9 +14,9 @@ Component({
      */
     data: {
       menuItems: [
-        { id: 1, text: "未接任务", icon: "/images/icons/help.svg" },
-        { id: 2, text: "已接任务", icon: "/images/icons/love.svg" },
-        { id: 3, text: "我的", icon: "/images/icons/home.svg" },
+        { id: 1, text: "未接任务", icon: "/images/icons/wjrw2.svg" },
+        { id: 2, text: "已接任务", icon: "/images/icons/yjrw2.svg" },
+        { id: 3, text: "我的", icon: "/images/icons/my.svg" },
       ],
     },
     /**

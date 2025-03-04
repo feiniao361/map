@@ -1,0 +1,17 @@
+<view class="navigation-container">
+  <map
+    id="map"
+    class="map"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    markers="{{markers}}"
+    polyline="{{polyline}}"
+    show-location
+    scale="16"
+  ></map>
+  
+  <view class="control-panel">
+    <button class="back-btn" bindtap="onBackTap">返回</button>
+    <button class="location-btn" bindtap="openMapApp">开启导航</button>
+  </view>
+</view>

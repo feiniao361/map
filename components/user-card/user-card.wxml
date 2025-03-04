@@ -8,27 +8,27 @@
   <!-- 底部导航区域 -->
   <view class="grid">
     <view class="grid-item" bindtap="onClose">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/sy.svg" class="icon"></image>
       <text>首页</text>
     </view>
     <view class="grid-item" bindtap="navigateToLottery">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/jfcj.svg" class="icon"></image>
       <text>积分抽奖</text>
     </view>
     <view class="grid-item" bindtap="navigateToPointsDetail">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/wdjf.svg" class="icon"></image>
       <text>我的积分</text>
     </view>
     <view class="grid-item">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/dwc.svg" class="icon"></image>
       <text>待完成</text>
     </view>
     <view class="grid-item">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/jfsc.svg" class="icon"></image>
       <text>积分商城</text>
     </view>
     <view class="grid-item">
-      <image src="/images/icons/home.svg" class="icon"></image>
+      <image src="/images/icons/scj.svg" class="icon"></image>
       <text>收藏夹</text>
     </view>
   </view>

@@ -4,11 +4,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50vh;
+  height: 60vh;
   background-color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   z-index: 20;
 }
@@ -17,21 +17,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .task-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #333;
 }
 
+.task-count {
+  font-size: 14px;
+  color: #888;
+}
+
+.task-items {
+  padding: 8px 0;
+}
+
 .task-item {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  padding: 16px 20px;
+  margin: 0 12px 8px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.task-item:active {
+  background-color: #f5f5f5;
+  transform: scale(0.98);
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
 }
 
 .task-info {
@@ -40,24 +76,36 @@
   align-items: center;
 }
 
-.task-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #007bff;
-}
-
 .task-progress {
   font-size: 14px;
-  color: #333;
+  color: #666;
 }
 
-.task-details {
+.task-badges {
   display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
+  gap: 8px;
 }
 
 .task-level, .task-distance {
   font-size: 12px;
-  color: #666;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.task-level {
+  background-color: #4caf50;
+}
+
+.task-distance {
+  background-color: #2196f3;
+}
+
+.task-arrow {
+  margin-left: 10px;
+}
+
+.arrow-icon {
+  color: #ccc;
+  font-size: 16px;
 }

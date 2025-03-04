@@ -1,3 +1,4 @@
+const API = require('../../config/api.js');
 Page({
   data: {
     totalPoints: 0,
@@ -13,10 +14,11 @@ Page({
     const that = this;
     const accessToken = wx.getStorageSync('accessToken');
     
+    
     wx.showLoading({ title: '加载中...' });
 
     wx.request({
-      url: 'http://47.116.205.160:9081/point/myPointInfo',
+      url: API.POINT.POINT,
       method: 'POST',
       header: {
         'Content-Type': 'application/json',

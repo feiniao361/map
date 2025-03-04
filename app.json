@@ -5,6 +5,7 @@
     "pages/wxlogin/wxlogin",
     "pages/points-detail/points-detail",
     "pages/task-detail/task-detail",
+    "pages/navigation/navigation",
     "components/character/character",
     "components/task-list/task-list",
     "components/sidebar/sidebar",

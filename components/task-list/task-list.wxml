@@ -2,6 +2,7 @@
 <view class="task-list">
   <view class="task-header">
     <text class="task-title">{{taskTitle}}</text>
+    <view class="task-count">共 {{tasks.length}} 个任务</view>
   </view>
   <view class="task-items">
     <view class="task-item" 
@@ -9,11 +10,18 @@
           wx:key="id" 
           bindtap="onTaskTap" 
           data-task-id="{{item.id}}">
-      <view class="task-name">{{item.name}}</view>
-      <view class="task-info">
-        <text class="task-progress">{{item.progress}}</text>
-        <text class="task-level">{{item.level}}</text> 
-        <text class="task-distance">{{item.distance}}</text>
+      <view class="task-content">
+        <view class="task-name">{{item.name}}</view>
+        <view class="task-info">
+          <text class="task-progress">{{item.progress}}</text>
+          <view class="task-badges">
+            <text class="task-level">{{item.level}}</text> 
+            <text class="task-distance">{{item.distance}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="task-arrow">
+        <text class="arrow-icon">></text>
       </view>
     </view>
   </view>

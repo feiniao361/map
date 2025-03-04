@@ -6,7 +6,7 @@ const DEFAULT_ROTATE = 45; // 旋转角度
 const DEFAULT_SKEW = 60; // 水平透视角度
 const DEFAULT_TILT = 0; // 倾斜角度, 最大60
 const DEFAULT_SCROLL = false; // 默认允许拖动
-const DEFAULT_ZOOM = false; // 默认允许缩放
+const DEFAULT_ZOOM = true; // 默认允许缩放
 const DEFAULT_LOCATION = false; // 当前位置
 const DEFAULT_THREED = true; // 3D
 
@@ -77,19 +77,19 @@ Component({
      * attached: 当组件被挂载时触发
      */
     attached() {
-      log("【主地图组件】attached 生命周期触发，属性数据:", this.data);
+      //log("【主地图组件】attached 生命周期触发，属性数据:", this.data);
     },
 
     /**
      * ready: 当组件初始化完成后触发
      */
     ready() {
-      log("【主地图组件】ready 生命周期触发");
+      //log("【主地图组件】ready 生命周期触发");
       try {
         // 创建地图上下文
         this.mapCtx = wx.createMapContext("mainMap", this);
         if (this.mapCtx) {
-          log("【主地图组件】地图上下文创建成功:", this.mapCtx);
+          //log("【主地图组件】地图上下文创建成功:", this.mapCtx);
         } else {
           error("【主地图组件】地图上下文创建失败");
         }
@@ -97,7 +97,7 @@ Component({
           // 通知父组件地图已加载完成
           this.triggerEvent("mapready", { ready: true });
           this.setData({ mapLoaded: true });
-          console.trace("【主地图组件】通知父组件触发点");
+          //console.trace("【主地图组件】通知父组件触发点");
         }
       } catch (err) {
         error("【主地图组件】地图上下文初始化出错", err);

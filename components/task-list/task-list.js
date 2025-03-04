@@ -1,3 +1,5 @@
+const API = require('../../config/api.js');
+
 // components/task-list/task-list.js
 Component({
 
@@ -24,11 +26,15 @@ Component({
     },
 
     // 添加任务点击事件处理
+    // 在 onTaskTap 方法中
     onTaskTap(e) {
       const taskId = e.currentTarget.dataset.taskId;
+      console.log('点击的任务ID:', taskId); // 添加调试日志
       const task = this.data.tasks.find(t => t.id === taskId);
+      console.log('找到的任务:', task); // 添加调试日志
+      
       wx.navigateTo({
-        url: `/pages/task-detail/task-detail?id=${task.id}&taskName=${task.name}&level=${task.level}&rewardPoints=${task.rewardPoints}&latitude=${task.latitude}&longitude=${task.longitude}&taskId=${task.taskId}`
+        url: `/pages/task-detail/task-detail?taskId=${task.taskId}&isAccepted=${this.properties.taskTitle === '已接任务'}`
       });
     },
 
@@ -36,8 +42,9 @@ Component({
     loadUnacceptedTasks() {
       const token = wx.getStorageSync('accessToken');
       const username = wx.getStorageSync('username');
+      const API = require('../../config/api.js');
       wx.request({
-        url: 'http://47.116.205.160:9081/point/missPmList',
+        url: API.TASK.MISSPMLIST,
         method: 'POST',
         header: {
           'authorization': `Bearer ${token}`
@@ -76,7 +83,7 @@ Component({
       const token = wx.getStorageSync('accessToken');
       const username = wx.getStorageSync('username');
       wx.request({
-        url: 'http://47.116.205.160:9081/point/acceptedPmList',
+        url: API.TASK.ACCEPTEDPMLIST,
         method: 'POST',
         header: {
           'authorization': `Bearer ${token}`

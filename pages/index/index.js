@@ -1,9 +1,10 @@
 const movementManager = require('../../libs/movement-manager');
+const API = require('../../config/api.js');
 
 Page({
   data: {
-    latitude: 31.2304, // 主地图纬度
-    longitude: 121.4737, // 主地图经度
+    latitude: 31.150857, // 主地图纬度
+    longitude: 121.336321, // 主地图经度
     //scale: 18, // 主地图缩放级别
     mapReady: false, // 地图加载状态
     miniMapLatitude: 31.2304, // 小地图纬度
@@ -27,7 +28,7 @@ Page({
    * 页面加载事件
    */
   onLoad() {
-    console.log("【页面加载完成】地图初始数据:", this.data);
+    //console.log("【页面加载完成】地图初始数据:", this.data);
   },
 
   // 用户信息组件点击事件

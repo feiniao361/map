@@ -1,61 +1,161 @@
-/* 全局设置 */
-page {
-  background-color: #f8f9fa; /* 页面背景色 */
-  padding: 16px;
-  font-family: Arial, sans-serif;
+.page-container {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
 }
 
-/* 标题样式 */
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
 .title {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.task-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.task-badge.ssr {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+}
+
+.task-badge.sr {
+  background: linear-gradient(135deg, #5352ed, #3742fa);
+}
+
+.task-badge.r {
+  background: linear-gradient(135deg, #2ed573, #7bed9f);
+}
+
+.task-info {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.info-item {
+  margin-bottom: 16px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.value {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.value.points {
+  color: #ff6b6b;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
   color: #333;
   margin-bottom: 16px;
 }
 
-/* 任务信息块 */
-.task-info {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.task-info .label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 8px;
-}
-
-.task-info .value {
-  font-size: 16px;
+.section-content {
   color: #666;
-  margin-bottom: 12px;
-}
-
-/* 条件、内容样式 */
-.task-conditions, .task-content {
-  font-size: 16px;
   line-height: 1.6;
-  color: #444;
-  margin-bottom: 16px;
+  font-size: 15px;
 }
 
-/* 按钮样式 */
-button {
-  width: 100%;
+.button-container {
+  padding: 24px 0;
+  display: flex;
+  gap: 16px;
+}
+
+.primary-btn, .complete-btn, .abandon-btn {
+  flex: 1;
   height: 48px;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 24px;
   font-size: 16px;
-  border-radius: 8px;
-  text-align: center;
-  line-height: 48px;
-  font-weight: bold;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-button:active {
-  background-color: #0056b3;
+.primary-btn {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+}
+
+.complete-btn {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: white;
+}
+
+.abandon-btn {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #ff6b6b;
+}
+
+.primary-btn:active, .complete-btn:active, .abandon-btn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.address-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn {
+  min-width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #1989fa;
+  border-radius: 30rpx;
+  margin: 0;
 }
