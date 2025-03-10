@@ -75,8 +75,8 @@ Page({
   openMapApp() {
     const { destination } = this.data;
     const defaultLocation = {
-      latitude: 31.150857,
-      longitude: 121.336321
+      latitude: 31.144896,
+      longitude: 121.329896
     };
     
     const lat = destination ? destination.latitude : defaultLocation.latitude;

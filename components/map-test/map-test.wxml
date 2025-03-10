@@ -1,0 +1,12 @@
+<map
+  id="mapTest"
+  latitude="{{latitude}}"
+  longitude="{{longitude}}"
+  scale="{{scale}}"
+  markers="{{markers}}"
+  setting="{{setting}}"
+  bindtap="onTap"
+  bindmarkertap="onMarkerTap"
+  bindupdated="onUpdated"
+  style="width: 100%; height: 100vh;"
+/>

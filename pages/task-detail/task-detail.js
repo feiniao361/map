@@ -220,7 +220,7 @@ Page({
           key: "playTemp",
           force: 1,
           taskId: taskId,
-          videoList: ["b.mp4"]
+          videoList: ["nazha-1.mp4"]
         },
         success: (res) => {
           if (res.statusCode === 200) {

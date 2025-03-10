@@ -3,8 +3,8 @@ const API = require('../../config/api.js');
 
 Page({
   data: {
-    latitude: 31.150857, // 主地图纬度
-    longitude: 121.336321, // 主地图经度
+    latitude: 31.144896, // 主地图纬度
+    longitude: 121.329896, // 主地图经度
     //scale: 18, // 主地图缩放级别
     mapReady: false, // 地图加载状态
     miniMapLatitude: 31.2304, // 小地图纬度

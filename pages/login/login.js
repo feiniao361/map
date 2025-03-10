@@ -33,10 +33,10 @@ Page({
             'authorization': `Bearer ${access_token}`
           },
           data: {
-            key: "playTemp",
+            key: "playDefault",
             force: 1,
             taskId: "20250209001",
-            videoList: ["a.mp4"]
+            videoList: ["new.mp4"]
           },
           success: (msgRes) => {
             console.log('login消息发送成功:', msgRes);

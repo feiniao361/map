@@ -1,7 +1,7 @@
 // 定义默认属性常量
 const DEFAULT_LATITUDE = 31.150857;//31.2304; // 默认纬度
 const DEFAULT_LONGITUDE = 121.336321;//121.4737; // 默认经度
-const DEFAULT_SCALE = 19; // 默认缩放级别
+const DEFAULT_SCALE = 17; // 默认缩放级别
 const DEFAULT_ROTATE = 45; // 旋转角度
 const DEFAULT_SKEW = 60; // 水平透视角度
 const DEFAULT_TILT = 0; // 倾斜角度, 最大60
